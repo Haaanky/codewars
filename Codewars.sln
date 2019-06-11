@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "directionsbad", "directions
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BouncingBall", "BouncingBall\BouncingBall.csproj", "{686ACF99-6483-4623-85B2-237074C34133}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parentheses (in progress)", "Parentheses\Parentheses (in progress).csproj", "{B7D586B9-B011-4A7F-9728-8E5F4E233F66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sumstrings", "sumstrings\sumstrings.csproj", "{9F0903A6-9514-4BFB-B364-491BD1ACE299}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{686ACF99-6483-4623-85B2-237074C34133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{686ACF99-6483-4623-85B2-237074C34133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{686ACF99-6483-4623-85B2-237074C34133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D586B9-B011-4A7F-9728-8E5F4E233F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D586B9-B011-4A7F-9728-8E5F4E233F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D586B9-B011-4A7F-9728-8E5F4E233F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D586B9-B011-4A7F-9728-8E5F4E233F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0903A6-9514-4BFB-B364-491BD1ACE299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0903A6-9514-4BFB-B364-491BD1ACE299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0903A6-9514-4BFB-B364-491BD1ACE299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0903A6-9514-4BFB-B364-491BD1ACE299}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
