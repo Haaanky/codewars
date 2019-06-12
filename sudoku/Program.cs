@@ -118,7 +118,7 @@ namespace sudoku
                     {
                         for (int k = 0; k < 3; k++)
                         {
-                            boardOfBoardsArray[i][j][k] = board[j][k];
+                            boardOfBoardsArray[i][j][k] = board[j][k];  // de nio siffrorna i boardofboards måste bara vara 1-9, ordning spelar ingen roll
                         }
                     }
                 }
