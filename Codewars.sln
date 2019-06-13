@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "greedisgood", "greedisgood\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sudoku", "sudoku\sudoku.csproj", "{88941A4C-8456-4024-8E6E-2F6BF3D3F797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "doublecola", "doublecola\doublecola.csproj", "{F869958F-237A-47EA-9B8E-0E5392E3E322}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "doublecola (in  progress)", "doublecola\doublecola (in  progress).csproj", "{F869958F-237A-47EA-9B8E-0E5392E3E322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,33 +19,35 @@ namespace doublecola
         {
             //var lineQueue = new Queue<string>(names);
             //var lineQueue = new List<string>(names);
-            var lineQueue = new string[names.Length + 2];
-            int i;
-            for (i = 0; i < n; i++)
-            {
-                //var pop = lineQueue.Dequeue();
-                //lineQueue.Enqueue(pop);
-                //lineQueue.Enqueue(pop);
-                //lineQueue.Add(lineQueue[i]);
-                //lineQueue.Add(lineQueue[i]);
-                //for (int j = 0; j < names.Length; j++)
-                //{
+            //var lineQueue = new string[names.Length + 2];
+            //int i;
+            //for (i = 0; i < n; i++)
+            //{
+            //var pop = lineQueue.Dequeue();
+            //lineQueue.Enqueue(pop);
+            //lineQueue.Enqueue(pop);
+            //lineQueue.Add(lineQueue[i]);
+            //lineQueue.Add(lineQueue[i]);
+            //for (int j = 0; j < names.Length; j++)
+            //{
 
-                //}
-                //lineQueue[names.Length + 1] = names[0];
-                //lineQueue[names.Length + 2] = names[0];
-                //names[i] = null;
-            }
+            //}
+            //lineQueue[names.Length + 1] = names[0];
+            //lineQueue[names.Length + 2] = names[0];
+            //names[i] = null;
+            //}
+
             int j = 0;
+            int i = 1;
+            int pop = 0;
             while (i++ < n)
             {
-                j++;
-                if (j == names.Length)
-                    j = 0;
+
             }
             //Console.WriteLine(lineQueue[i - 1]);
-            Console.WriteLine(names[j]);
-            return lineQueue[i - 1];
+            Console.WriteLine(names[pop]);
+            return names[j];
+            //return lineQueue[i - 1];
         }
     }
 }
