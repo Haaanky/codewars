@@ -27,7 +27,7 @@ namespace Parentheses
             {
                 for (int i = 0; tmp.Count != matchingParan.Count && i < tmp.Count; i++)
                 {
-                    Int64.Parse
+                    //Int64.Parse
                     if (tmp[i] == a)
                         for (int j = i+1; j < tmp.Count; j++)
                         {
