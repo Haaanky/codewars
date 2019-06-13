@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace sudoku
@@ -75,69 +76,152 @@ namespace sudoku
         {
             if (board.All(x => !x.Contains(0) && x.Distinct().Count() == x.Length))
             {
-                var boardOfBoardsArray = new int[9][][] {
-                    new int[3][] {
-                        new int[3],
-                        new int[3],
-                        new int[3] },
-                    new int[3][] {
-                        new int[3],
-                        new int[3],
-                        new int[3] },
-                    new int[3][] {
-                        new int[3],
-                        new int[3],
-                        new int[3] },
-                    new int[3][] {
-                        new int[3],
-                        new int[3],
-                        new int[3] },
-                    new int[3][] {
-                        new int[3],
-                        new int[3],
-                        new int[3] },
-                    new int[3][] {
-                        new int[3],
-                        new int[3],
-                        new int[3] },
-                    new int[3][] {
-                        new int[3],
-                        new int[3],
-                        new int[3] },
-                    new int[3][] {
-                        new int[3],
-                        new int[3],
-                        new int[3] },
-                    new int[3][] {
-                        new int[3],
-                        new int[3],
-                        new int[3] }};
-                for (int i = 0; i < 9; i++)
+                var boardOfBoards = new int[9][] { new int[9], new int[9], new int[9], new int[9], new int[9], new int[9], new int[9], new int[9], new int[9] };
+                var queue = new Queue<int>[9] { new Queue<int>(board[0]), new Queue<int>(board[1]), new Queue<int>(board[2]), new Queue<int>(board[3]), new Queue<int>(board[4]), new Queue<int>(board[5]), new Queue<int>(board[6]), new Queue<int>(board[7]), new Queue<int>(board[8]) };
+
+                for (int i = 0; i < queue.Length; i++)
                 {
-                    for (int j = 0; j < 3; j++)
-                    {
-                        for (int k = 0; k < 3; k++)
+                    //Queue<int> item = (Queue<int>)queue[i];
+                    if (i < 3)
+                        for (int j = 0; j < 9; j++)
                         {
-                            boardOfBoardsArray[i][j][k] = board[j][k];  // de nio siffrorna i boardofboards måste bara vara 1-9, ordning spelar ingen roll
+                            if (j < 3)
+                                boardOfBoards[i][j] = queue[0].Dequeue();
+                            else if (j < 6)
+                                boardOfBoards[i][j] = queue[1].Dequeue();
+                            else
+                                boardOfBoards[i][j] = queue[2].Dequeue();
                         }
-                    }
+                    else if (i >= 3 && i < 6)
+                        for (int j = 0; j < 9; j++)
+                        {
+                            if (j < 3)
+                                boardOfBoards[i][j] = queue[3].Dequeue();
+                            else if (j < 6)
+                                boardOfBoards[i][j] = queue[4].Dequeue();
+                            else
+                                boardOfBoards[i][j] = queue[5].Dequeue();
+                        }
+                    else
+                        for (int j = 0; j < 9; j++)
+                        {
+                            if (j < 3)
+                                boardOfBoards[i][j] = queue[6].Dequeue();
+                            else if (j < 6)
+                                boardOfBoards[i][j] = queue[7].Dequeue();
+                            else
+                                boardOfBoards[i][j] = queue[8].Dequeue();
+                        }
                 }
-                PrintBoard(board);
-                Console.WriteLine();
-                PrintBoard(boardOfBoardsArray);
-                var invertedArray = new int[9][] { new int[9], new int[9], new int[9], new int[9], new int[9], new int[9], new int[9], new int[9], new int[9] };
-                for (int i = 0; i < 9; i++)
-                {
-                    for (int j = 0; j < 9; j++)
-                    {
-                        invertedArray[i][j] = board[j][i];
-                    }
-                }
+
+                //for (int i = 0; i < board.Length; i++)
+                //{
+                //    for (int j = 0; j < 9; j++)
+                //    {
+                //        boardOfBoards[i][0] = board[0][0]; // i || j 
+                //        boardOfBoards[i][1] = board[0][1]; // i || j 
+                //        boardOfBoards[i][2] = board[0][2]; // i || j 
+
+                //        boardOfBoards[i][3] = board[1][0]; // i + 1 || j - 3
+                //        boardOfBoards[i][4] = board[1][1]; // i + 1 || j - 3
+                //        boardOfBoards[i][5] = board[1][2]; // i + 1 || j - 3
+
+                //        boardOfBoards[i][6] = board[2][0]; // i + 2 || j - 6
+                //        boardOfBoards[i][7] = board[2][1]; // i + 2 || j - 6
+                //        boardOfBoards[i][8] = board[2][2]; // i + 2 || j - 6
+
+                //        /////////////////////////////////////////////////////
+
+                //        boardOfBoards[1][0] = board[3][0]; // i + 2 || j 
+                //        boardOfBoards[1][1] = board[3][1]; // i + 2 || j 
+                //        boardOfBoards[1][2] = board[3][2]; // i + 2 || j 
+
+                //        boardOfBoards[1][3] = board[4][0]; // i + 3 || j - 3
+                //        boardOfBoards[1][4] = board[4][1]; // i + 3 || j - 3
+                //        boardOfBoards[1][5] = board[4][2]; // i + 3 || j - 3
+
+                //        boardOfBoards[1][6] = board[5][0]; // i + 4 || j - 6
+                //        boardOfBoards[1][7] = board[5][1]; // i + 4 || j - 6
+                //        boardOfBoards[1][8] = board[5][2]; // i + 4 || j - 6
+
+                //        /////////////////////////////////////////////////////
+
+                //        boardOfBoards[2][0] = board[6][0]; // i + 4 || j 
+                //        boardOfBoards[2][1] = board[6][1]; // i + 4 || j 
+                //        boardOfBoards[2][2] = board[6][2]; // i + 4 || j 
+
+                //        boardOfBoards[2][3] = board[7][0]; // i + 5 || j - 3 
+                //        boardOfBoards[2][4] = board[7][1]; // i + 5 || j - 3 
+                //        boardOfBoards[2][5] = board[7][2]; // i + 5 || j - 3 
+
+                //        boardOfBoards[2][6] = board[8][0]; // i + 6 || j - 6
+                //        boardOfBoards[2][7] = board[8][1]; // i + 6 || j - 6
+                //        boardOfBoards[2][8] = board[8][2]; // i + 6 || j - 6
+                //    }
+                //}
+                //var boardOfBoardsArray = new int[9][][] {
+                //    new int[3][] {
+                //        new int[3],
+                //        new int[3],
+                //        new int[3] },
+                //    new int[3][] {
+                //        new int[3],
+                //        new int[3],
+                //        new int[3] },
+                //    new int[3][] {
+                //        new int[3],
+                //        new int[3],
+                //        new int[3] },
+                //    new int[3][] {
+                //        new int[3],
+                //        new int[3],
+                //        new int[3] },
+                //    new int[3][] {
+                //        new int[3],
+                //        new int[3],
+                //        new int[3] },
+                //    new int[3][] {
+                //        new int[3],
+                //        new int[3],
+                //        new int[3] },
+                //    new int[3][] {
+                //        new int[3],
+                //        new int[3],
+                //        new int[3] },
+                //    new int[3][] {
+                //        new int[3],
+                //        new int[3],
+                //        new int[3] },
+                //    new int[3][] {
+                //        new int[3],
+                //        new int[3],
+                //        new int[3] }};
+
+                //for (int i = 0; i < 9; i++)
+                //{
+                //    for (int j = 0; j < 3; j++)
+                //    {
+                //        for (int k = 0; k < 3; k++)
+                //        {
+                //            boardOfBoardsArray[i][j][k] = board[j][k];  // de nio siffrorna i boardofboards måste bara vara 1-9, ordning spelar ingen roll
+                //        }
+                //    }
+                //}
                 //PrintBoard(board);
                 //Console.WriteLine();
-                //PrintBoard(invertedArray);
-                if (invertedArray.All(x => !x.Contains(0) && x.Distinct().Count() == x.Length))
-                    return true;
+                if (boardOfBoards.All(x => !x.Contains(0) && x.Distinct().Count() == x.Length))
+                {
+                    var invertedArray = new int[9][] { new int[9], new int[9], new int[9], new int[9], new int[9], new int[9], new int[9], new int[9], new int[9] };
+                    for (int i = 0; i < 9; i++)
+                    {
+                        for (int j = 0; j < 9; j++)
+                        {
+                            invertedArray[i][j] = board[j][i];
+                        }
+                    }
+                    if (invertedArray.All(x => !x.Contains(0) && x.Distinct().Count() == x.Length))
+                        return true;
+                }
             }
             return false;
             //return board.All(x => x.All(y => y == 1 || y == 2 || y == 3 || y == 4 || y == 5 || y == 6 || y == 7 || y == 8 || y == 9));
