@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace sumstrings
 {
@@ -13,7 +14,12 @@ namespace sumstrings
     {
         public static string sumStrings(string a, string b)
         {
-            return Convert.ToDecimal(double.Parse(a, System.Globalization.NumberStyles.Any) + double.Parse(b, System.Globalization.NumberStyles.AllowDecimalPoint)).ToString();
+            if (a == string.Empty)
+                return b;
+            else if (b == string.Empty)
+                return a;
+
+            return (BigInteger.Parse(a) + BigInteger.Parse(b)).ToString();
         }
     }
 }
