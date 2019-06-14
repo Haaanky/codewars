@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sortbinarytreebylevels", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "whoeatswho", "whoeatswho\whoeatswho.csproj", "{8E950434-AEBC-4D03-8FD5-D8CCE966EA56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hextodec", "hextodec\hextodec.csproj", "{F35269A5-87EB-40D3-889E-69AEFB541C4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{8E950434-AEBC-4D03-8FD5-D8CCE966EA56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E950434-AEBC-4D03-8FD5-D8CCE966EA56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E950434-AEBC-4D03-8FD5-D8CCE966EA56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F35269A5-87EB-40D3-889E-69AEFB541C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35269A5-87EB-40D3-889E-69AEFB541C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35269A5-87EB-40D3-889E-69AEFB541C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35269A5-87EB-40D3-889E-69AEFB541C4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
