@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mumbling", "mumbling\mumbli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oddnumber", "oddnumber\oddnumber.csproj", "{A1C8A213-74E4-40DD-9BEA-EF0306B77020}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "highlow", "highlow\highlow.csproj", "{812639A3-5230-4AA0-8AEF-77A964261F4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{A1C8A213-74E4-40DD-9BEA-EF0306B77020}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1C8A213-74E4-40DD-9BEA-EF0306B77020}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1C8A213-74E4-40DD-9BEA-EF0306B77020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{812639A3-5230-4AA0-8AEF-77A964261F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{812639A3-5230-4AA0-8AEF-77A964261F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{812639A3-5230-4AA0-8AEF-77A964261F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{812639A3-5230-4AA0-8AEF-77A964261F4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
