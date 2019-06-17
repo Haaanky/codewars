@@ -49,6 +49,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hextodec", "hextodec\hextod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mumbling", "mumbling\mumbling.csproj", "{BF7EC294-5D6F-48F7-AFD8-BA71B1414241}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oddnumber", "oddnumber\oddnumber.csproj", "{A1C8A213-74E4-40DD-9BEA-EF0306B77020}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{BF7EC294-5D6F-48F7-AFD8-BA71B1414241}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF7EC294-5D6F-48F7-AFD8-BA71B1414241}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF7EC294-5D6F-48F7-AFD8-BA71B1414241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C8A213-74E4-40DD-9BEA-EF0306B77020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C8A213-74E4-40DD-9BEA-EF0306B77020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C8A213-74E4-40DD-9BEA-EF0306B77020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C8A213-74E4-40DD-9BEA-EF0306B77020}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
