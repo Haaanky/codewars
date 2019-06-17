@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oddnumber", "oddnumber\oddn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "highlow", "highlow\highlow.csproj", "{812639A3-5230-4AA0-8AEF-77A964261F4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "persistentbugger", "persistentbugger\persistentbugger.csproj", "{0445AC04-51A8-431C-BB93-A980961BF96E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{812639A3-5230-4AA0-8AEF-77A964261F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{812639A3-5230-4AA0-8AEF-77A964261F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{812639A3-5230-4AA0-8AEF-77A964261F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0445AC04-51A8-431C-BB93-A980961BF96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0445AC04-51A8-431C-BB93-A980961BF96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0445AC04-51A8-431C-BB93-A980961BF96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0445AC04-51A8-431C-BB93-A980961BF96E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
