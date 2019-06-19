@@ -23,6 +23,17 @@ namespace Parentheses
         {
             var tmp = input.Where(x => x == a || x == b).ToList();
             var matchingParan = new List<char>();
+
+            var length = input.Length / 2;
+
+            for (int i = 0; i <= length; i++)
+            {
+                input = input.Replace("()", string.Empty);
+            }
+
+            return input == string.Empty;
+
+
             if (tmp.Any())
             {
                 for (int i = 0; tmp.Count != matchingParan.Count && i < tmp.Count; i++)

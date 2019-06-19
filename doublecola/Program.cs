@@ -37,16 +37,20 @@ namespace doublecola
             //names[i] = null;
             //}
 
-            int j = 0;
-            int i = 1;
-            int pop = 0;
-            while (i++ < n)
-            {
+            //int j = 0;
+            //int i = 1;
+            //int pop = 0;
+            //while (i++ < n)
+            //{
 
+            //}
+            while (n > names.Length)
+            {
+                n = (long)Math.Floor((n-names.Length+1)/2.0);
             }
+            return names[n - 1];
             //Console.WriteLine(lineQueue[i - 1]);
-            Console.WriteLine(names[pop]);
-            return names[j];
+            //Console.WriteLine(names[pop]);
             //return lineQueue[i - 1];
         }
     }

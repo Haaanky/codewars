@@ -9,16 +9,15 @@ namespace dependencychains
         static void Main(string[] args)
         {
             var startFiles = new Dictionary<string, string[]>();
-            startFiles["A"] = new string[] { "B" };
-            startFiles["B"] = new string[] { "C" };
+            startFiles["A"] = new string[] { "C", "D", "B" };
+            startFiles["B"] = new string[] { "A" };
             startFiles["C"] = new string[] { "D" };
-            startFiles["D"] = new string[] { "A" };
+            startFiles["D"] = new string[] { "B" };
 
             foreach (var item in Kata.ExpandDependencies(startFiles))
             {
                 Console.WriteLine(item);
             }
-
             /*
                     correctFiles["A"] = new string[] {"B", "C", "D"};
                     correctFiles["B"] = new string[] {"C", "D"};
@@ -32,6 +31,20 @@ namespace dependencychains
     {
         public static Dictionary<string, string[]> ExpandDependencies(Dictionary<string, string[]> dependencies)
         {
+            if (dependencies.Distinct().Count() != dependencies.Count)
+                throw new InvalidOperationException();
+
+            foreach (var item in dependencies)
+            {
+                Console.WriteLine($"{item.Key}: ");
+                foreach (var value in item.Value)
+                {
+                    if (item.Key == value)
+                        throw new InvalidOperationException();
+                    Console.Write(value + " ");
+                }
+            }
+
             if (dependencies.Count == 0)
                 return dependencies;
 
@@ -41,9 +54,9 @@ namespace dependencychains
                 hashsetDictionary.Add(item.Key, new HashSet<string>(item.Value));
             }
 
-            foreach (var (item, thing) in hashsetDictionary.SelectMany(item => hashsetDictionary.Values.SelectMany(thing => thing.ToArray().Where(final => item.Key == final).Select(final => (item, thing)))))
+            foreach (var (keyValuePair, value) in hashsetDictionary.SelectMany(item => hashsetDictionary.Values.SelectMany(thing => thing.ToArray().Where(final => item.Key == final).Select(final => (item, thing)))))
             {
-                thing.UnionWith(item.Value);
+                value.UnionWith(keyValuePair.Value);
             }
 
             var result = new Dictionary<string, string[]>();
@@ -53,7 +66,23 @@ namespace dependencychains
                 result[item.Key] = item.Value.ToArray();
             }
 
-            if (result.All(x => x.Value.All(a => result.Values.All(b => b.Contains(a)))))
+            //if (result.All(x => x.Value.All(a => result.Values.All(b => b.Contains(a)))))
+            //    throw new InvalidOperationException();
+
+            var count = 0;
+            foreach (var keyValuePair in result)
+            {
+                foreach (var value in result.Values)
+                {
+                    if (value.Contains(keyValuePair.Key))
+                    {
+                        count++;
+                        break;
+                    }
+                }
+            }
+
+            if (count == result.Count)
                 throw new InvalidOperationException();
 
             return result;
